@@ -61,6 +61,4 @@ Analysis: Buka final_project_analysis.ipynb untuk melihat hasil pengolahan data.
 https://github.com/argyadiva/demo-airflow_with_spark
 
 ## Author ✍️
-ChristianHFS
-
-Proyek ini dibuat sebagai bagian dari pemenuhan syarat kelulusan program CODA RMT-012.
+Christian & tim (Raina, Putrima, Owen, Raihan)
