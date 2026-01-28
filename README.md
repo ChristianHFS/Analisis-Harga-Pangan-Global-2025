@@ -1,51 +1,92 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Q6ZQd3M9)
+Analisis Harga Pangan Global 2025 🌾📊
+Repositori ini berisi proyek akhir (Final Project) untuk program CODA RMT-012. Proyek ini berfokus pada pembangunan sistem End-to-End Data Engineering untuk menganalisis dinamika harga komoditas pangan global pada tahun 2025, mengintegrasikan data ekonomi (GDP), dan menyediakan wawasan berbasis data untuk pengambilan keputusan strategis.
 
-## Analisis Harga Pangan Global 2025
-_Final Project CODA RMT-012_
+Daftar Isi 🗒️
+Project Overview
 
-## Background
-Dataset WFP Food Prices Global 2025 menyediakan data harga komoditas yang bersifat granular, mencakup informasi waktu, lokasi pasar, jenis komoditas, harga lokal, harga dalam USD, serta indikator ekonomi seperti GDP per kapita. Data ini memungkinkan analisis terhadap tren harga, perbandingan harga antar wilayah, serta keterkaitan antara kondisi ekonomi dan harga komoditas.
+Latar Belakang Masalah
 
-## Problem Statement
-Bagaimana cara memahami dan menganalisis dinamika harga komoditas global pada tahun 2025 dengan mengidentifikasi tren harga, perbedaan harga antar pasar dan negara, serta hubungan antara harga komoditas dan kondisi ekonomi, sehingga dapat mendukung pengambilan keputusan operasional yang lebih efisien (seperti restok komoditas) dan memberikan insight berbasis data terkait ketimpangan harga dan daya beli masyarakat?
+Arsitektur & Teknologi
 
-## Exploratory Data Harga Pangan Global (WFP 2025)
-Menggabungkan Data Harga Pangan dengan GDP per Kapita | WFP Data - Master Data - GDP Data
-a. Mapping Negara
-Menambahkan kolom Country yang berisi nama negara dengan mengacu pada kolom CountryISO3.
-b. Sumber Data Tambahan
-Mengimpor data GDP per kapita untuk memberikan konteks ekonomi pada analisis harga.
-c. Data Cleaning
-Mengubah beberapa tipe data menjadi numerik, dan menangani perbedaan penulisan nama negara antar dataset.
+Proses ETL
 
-## Skalabilitas & Efisiensi
-Strategi kami berfokus pada Arsitektur Modern yang Hemat Biaya. Dengan menggunakan tools, tidak hanya mendapatkan performa tinggi, tapi juga efisiensi operasional
-a. Memproses data lebih cepat (PySpark).
-b. Mengurangi biaya infrastruktur (Neon DB).
-c. Mempercepat waktu pengembangan dan deployment (Docker).
+Struktur File
 
-## ETL Process
-A. Tahap Extract (Ekstraksi Data) | Mengambil data mentah dari sumber luar
-1. Sumber Data
-World Food Programme (WFP) Humanitarian Data Portal.
-2. Format
-Dataset dalam bentuk CSV.
-3. Metode
-Pengambilan data dilakukan secara otomatis menggunakan protokol HTTP GET (API call atau direct download).
+Cara Menggunakan
 
-B. Tahap Transform (Transformasi Data) | Pemrosesan data menggunakan framework PySpark untuk mengubah data mentah menjadi format yang siap dianalisis
-1. Cleaning
-   Melakukan pembersihan data, salah satu langkah krusialnya adalah menghapus HXL Metadata (tag khusus data kemanusiaan) agar tidak mengganggu proses kalkulasi.
-2. Pemodelan Data (Star Schema)
-   Data dipecah menjadi struktur tabel pendukung analisis:
-   a. Fact Table: fact_food_price (berisi data transaksi/harga pangan).
-   b. Dimension Tables: Data dikelompokkan ke dalam kategori Dim Commodity (komoditas), Dim Country (negara), Dim Market (pasar), dan Dim Date (waktu).
-3. Penyimpanan Sementara
-   Hasil transformasi disimpan dalam format Parquet (file kolom yang efisien) ke dalam direktori lokal atau cloud storage sebagai staging area.
+Dependencies & Libraries
 
-C. Tahap Load (Pemuatan Data) | Memindahkan data yang sudah bersih ke penyimpanan permanen
-1. Teknologi
-   Menggunakan Spark JDBC sebagai jembatan pengiriman data.
-2. Target
-   Data dimuat ke dalam Neon PostgreSQL Data Warehouse. Di sini, data sudah siap digunakan oleh tim analis atau aplikasi visualisasi data (seperti Tableau atau Power BI).
+Author
 
+Project Overview 📝
+Proyek ini menggunakan dataset dari WFP (World Food Programme) yang bersifat granular. Kami mengintegrasikan data harga pangan dengan indikator ekonomi seperti GDP per kapita untuk memahami hubungan antara daya beli masyarakat dan fluktuasi harga pasar. Data diproses menggunakan arsitektur modern yang mengutamakan skalabilitas dan efisiensi biaya.
+
+Tahapan Utama:
+
+Exploratory Data Analysis (EDA): Pembersihan data dan pemetaan negara menggunakan CountryISO3.
+
+Data Transformation: Pemodelan data menjadi Star Schema untuk kebutuhan Data Warehouse.
+
+Automated Pipeline: Orkestrasi data menggunakan Airflow dan pemrosesan batch dengan PySpark.
+
+Latar Belakang Masalah 🧐
+Bagaimana cara memahami dinamika harga komoditas global yang fluktuatif? Masalah utama yang diselesaikan adalah:
+
+Mengidentifikasi tren harga antar wilayah.
+
+Menganalisis ketimpangan harga pangan dibanding kondisi ekonomi (GDP).
+
+Memberikan rekomendasi operasional yang efisien (seperti waktu restok komoditas) berbasis data.
+
+Arsitektur & Teknologi ⚙️
+Kami menggunakan Arsitektur Modern Hemat Biaya:
+
+Pemrosesan Data: Apache Spark (PySpark) untuk performa tinggi.
+
+Orkestrasi: Apache Airflow untuk manajemen workflow.
+
+Database: Neon PostgreSQL sebagai Cloud Data Warehouse.
+
+Containerization: Docker untuk konsistensi lingkungan pengembangan.
+
+Proses ETL 🚀
+1. Extract
+Mengambil data mentah (CSV) secara otomatis dari WFP Humanitarian Data Portal menggunakan protokol HTTP/API.
+
+2. Transform
+Cleaning: Menghapus HXL Metadata dan menangani missing values.
+
+Modeling: Memecah data menjadi Fact Table (fact_food_price) dan Dimension Tables (dim_commodity, dim_country, dim_market, dim_date).
+
+Storage: Data disimpan sementara dalam format Parquet untuk efisiensi.
+
+3. Load
+Data dimuat ke dalam Neon PostgreSQL menggunakan Spark JDBC, siap untuk dikonsumsi oleh alat visualisasi seperti Tableau atau Power BI.
+
+Struktur File 📂
+airflow-with-spark/: Berisi konfigurasi DAGs dan docker-compose untuk pipeline.
+
+Dashboard/: File terkait visualisasi hasil analisis.
+
+EDA/: Notebook analisis awal data harga pangan.
+
+final_project_analysis.ipynb: Analisis utama dan pemodelan data.
+
+final_project.sql: Skema database PostgreSQL (DDL).
+
+datamodelling.png: Diagram skema tabel (Star Schema).
+
+Cara Menggunakan 💻
+Persiapan Database: Setup database di Neon PostgreSQL dan masukkan kredensial ke file konfigurasi.
+
+Environment: Pastikan Docker terinstal. Jalankan docker-compose up di folder airflow-with-spark.
+
+Running Pipeline: Aktifkan DAG di dashboard Airflow untuk memulai proses ETL.
+
+Analysis: Buka final_project_analysis.ipynb untuk melihat hasil pengolahan data.
+
+Dependencies & Libraries 📚
+Author ✍️
+Christian H. F. S.
+
+Proyek ini dibuat sebagai bagian dari pemenuhan syarat kelulusan program CODA RMT-012.
