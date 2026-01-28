@@ -1,5 +1,6 @@
 ## Analisis Harga Pangan Global 2025 🌾📊
-Repositori ini berisi proyek akhir (Final Project) untuk program CODA RMT-012. Proyek ini berfokus pada pembangunan sistem End-to-End Data Engineering untuk menganalisis dinamika harga komoditas pangan global pada tahun 2025, mengintegrasikan data ekonomi (GDP), dan menyediakan wawasan berbasis data untuk pengambilan keputusan strategis.
+Repositori ini berisi proyek akhir (Final Project) untuk program CODA RMT-012. 
+Proyek ini berfokus pada pembangunan sistem End-to-End Data Engineering untuk menganalisis dinamika harga komoditas pangan global pada tahun 2025, mengintegrasikan data ekonomi (GDP), dan menyediakan wawasan berbasis data untuk pengambilan keputusan strategis.
 
 ## Daftar Isi 🗒️
 Project Overview
@@ -12,7 +13,8 @@ Project Overview
 7. Author
 
 ## Project Overview 📝
-Proyek ini menggunakan dataset dari WFP (World Food Programme) yang bersifat granular. Kami mengintegrasikan data harga pangan dengan indikator ekonomi seperti GDP per kapita untuk memahami hubungan antara daya beli masyarakat dan fluktuasi harga pasar. Data diproses menggunakan arsitektur modern yang mengutamakan skalabilitas dan efisiensi biaya.
+Proyek ini menggunakan dataset dari WFP (World Food Programme) yang bersifat granular. 
+Kami mengintegrasikan data harga pangan dengan indikator ekonomi seperti GDP per kapita untuk memahami hubungan antara daya beli masyarakat dan fluktuasi harga pasar. Data diproses menggunakan arsitektur modern yang mengutamakan skalabilitas dan efisiensi biaya.
 Tahapan Utama:
 Exploratory Data Analysis (EDA): Pembersihan data dan pemetaan negara menggunakan CountryISO3.
 Data Transformation: Pemodelan data menjadi Star Schema untuk kebutuhan Data Warehouse.
@@ -61,4 +63,4 @@ Analysis: Buka final_project_analysis.ipynb untuk melihat hasil pengolahan data.
 https://github.com/argyadiva/demo-airflow_with_spark
 
 ## Author ✍️
-Christian & tim (Raina, Putrima, Owen, Raihan)
+Christian & Tim (Raina, Putrima, Owen, Raihan)
