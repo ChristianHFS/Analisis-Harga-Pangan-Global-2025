@@ -1,6 +1,6 @@
 ## Analisis Harga Pangan Global 2025 🌾📊
-Repositori ini berisi proyek akhir (Final Project) untuk program CODA RMT-012. 
-Proyek ini berfokus pada pembangunan sistem End-to-End Data Engineering untuk menganalisis dinamika harga komoditas pangan global pada tahun 2025, mengintegrasikan data ekonomi (GDP), dan menyediakan wawasan berbasis data untuk pengambilan keputusan strategis.
+Repositori ini berisi proyek akhir (Final Project) untuk menyelesaikan program CODA RMT-012. 
+Proyek ini berfokus pada pembangunan sistem End-to-End Data untuk menganalisis dinamika harga komoditas pangan global pada tahun 2025, mengintegrasikan data ekonomi (GDP), dan menyediakan wawasan berbasis data untuk pengambilan keputusan strategis.
 
 ## Daftar Isi 🗒️
 Project Overview
